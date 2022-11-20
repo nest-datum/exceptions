@@ -1,9 +1,8 @@
 {
   "name": "@nest-datum/exceptions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Classes for handling exceptions and generating messages to the log service",
   "author": "ihor-bielchenko",
-  "private": true,
   "license": "ISC",
   "scripts": {
     "prebuild": "rimraf dist",
