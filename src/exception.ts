@@ -25,13 +25,15 @@ export class Exception {
 	}
 
 	getUserId() {
-		if (!this.payload
-			|| typeof this.payload !== 'object'
-			|| Array.isArray(this.payload)
-			|| !this.payload['userId']) {
-			return this.addMessage(`"userId" in "payload" property is not an ID.`);
+		if (this.payload
+			&& typeof this.payload === 'object'
+			&& typeof this.payload['user'] === 'object'
+			&& this.payload['user']['id']) {
+			this.payload['userId'] = this.payload['user']['id'];
+
+			return this.payload['user']['id'];
 		}
-		return this.payload['userId'];
+		return this.addMessage(`"userId" in "payload" property is not an ID.`);
 	}
 
 	getMethod() {
