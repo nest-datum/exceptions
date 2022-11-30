@@ -15,7 +15,7 @@ export class NotificationException extends Exception {
 	}
 
 	getAction() {
-		return this.options['method'] || '';
+		return this.options['method'] || this.getMessage();
 	}
 
 	logOptionsPayload() {

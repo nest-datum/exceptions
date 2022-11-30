@@ -9,7 +9,7 @@ export class Exception {
 		protected readonly options,
 		protected readonly payload: any,
 	) {
-		this.addCmd('error.create');
+		this.addCmd('err.create');
 	}
 
 	getCmd(): string {
